@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* CSS Document */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: grid;
+	grid: 
+		'header header header header header header'
+		'p1score board board board board p2score'
+		'p1score board board board board p2score'
+		'p1score board board board board p2score'
+		'p1score message message message message p2score'
+		'footer footer footer footer footer footer';
+	min-width: 100%;
+}
+
+#header {
+	grid-area: header;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px black solid;
+	margin-bottom: 10px;
+}
+
+#header h1 {
+	
+}
+
+#p1score {
+	grid-area: p1score;
+	display: flex;
+	justify-content: center;
+	border: 1px black solid;
+	width: 80%;
+	height: 50%;
+	margin: 0 10%;
+}
+
+#p1score h2 {
+	margin-top: 10px;
+	text-decoration: underline;
+}
+
+#board {
+	grid-area: board;
+	display: grid;
+	grid-template: 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	height: 500px;
+	border: 3px black solid;
+}
+
+.square {
+	background-color: blue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.dot {
+	height: 70px;
+  	width: 70px;
+  	background-color: white;
+  	border-radius: 50%;
+	border: 2px black solid;
+  	display: inline-block;
+}
+
+.dot:hover {
+	border: 2px red solid;
+}
+
+#p2score {
+	grid-area: p2score;
+	display: flex;
+	justify-content: center;
+	border: 1px black solid;
+	width: 80%;
+	height: 50%;
+	margin: 0 10%;
+}
+
+#p2score h2 {
+	margin-top: 10px;
+	text-decoration: underline;
+}
+
+#message {
+	grid-area: message;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	margin: 10px 0;
+	border: 1px black solid;
+}
+
+#footer {
+	grid-area: footer;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#restart {
+	width: 150px;
+	height: 50px;
+	
+}
