@@ -58,14 +58,24 @@ body {
 	font-style: normal;
 }
 
-#p1score h3 {
+#score1 {
 	margin-top: 15px;
+	font-family: anca, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 40px;
 }
 
 #board {
 	grid-area: board;
 	display: grid;
-	grid-template: 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid: 
+		's0 s6 s12 s18 s24 s30 s36'
+		's1 s7 s13 s19 s25 s31 s37'
+		's2 s8 s14 s20 s26 s32 s38'
+		's3 s9 s15 s21 s27 s33 s39'
+		's4 s10 s16 s22 s28 s34 s40'
+		's5 s11 s17 s23 s29 s35 s41';
 	height: 500px;
 	border: 3px black solid;
 }
@@ -89,6 +99,175 @@ body {
 
 .dot:hover {
 	border: 2px red solid;
+	cursor: pointer;
+}
+
+#s0 {
+	grid-area: s0;
+}
+
+#s1 {
+	grid-area: s1;
+}
+
+#s2 {
+	grid-area: s2;
+}
+
+#s3 {
+	grid-area: s3;
+}
+
+#s4 {
+	grid-area: s4;
+}
+
+#s5 {
+	grid-area: s5;
+}
+
+#s6 {
+	grid-area: s6;
+}
+
+#s7 {
+	grid-area: s7;
+}
+
+#s8 {
+	grid-area: s8;
+}
+
+#s9 {
+	grid-area: s9;
+}
+
+#s10 {
+	grid-area: s10;
+}
+
+#s11 {
+	grid-area: s11;
+}
+
+#s12 {
+	grid-area: s12;
+}
+
+#s13 {
+	grid-area: s13;
+}
+
+#s14 {
+	grid-area: s14;
+}
+
+#s15 {
+	grid-area: s15;
+}
+
+#s16 {
+	grid-area: s16;
+}
+
+#s17 {
+	grid-area: s17;
+}
+
+#s18 {
+	grid-area: s18;
+}
+
+#s19 {
+	grid-area: s19;
+}
+
+#s20 {
+	grid-area: s20;
+}
+
+#s21 {
+	grid-area: s21;
+}
+
+#s22 {
+	grid-area: s22;
+}
+
+#s23 {
+	grid-area: s23;
+}
+
+#s24 {
+	grid-area: s24;
+}
+
+#s25 {
+	grid-area: s25;
+}
+
+#s26 {
+	grid-area: s26;
+}
+
+#s27 {
+	grid-area: s27;
+}
+
+#s28 {
+	grid-area: s28;
+}
+
+#s29 {
+	grid-area: s29;
+}
+
+#s30 {
+	grid-area: s30;
+}
+
+#s31 {
+	grid-area: s31;
+}
+
+#s32 {
+	grid-area: s32;
+}
+
+#s33 {
+	grid-area: s33;
+}
+
+#s34 {
+	grid-area: s34;
+}
+
+#s35 {
+	grid-area: s35;
+}
+
+#s36 {
+	grid-area: s36;
+}
+
+#s37 {
+	grid-area: s37;
+}
+
+#s38 {
+	grid-area: s38;
+}
+
+#s39 {
+	grid-area: s39;
+}
+
+#s40 {
+	grid-area: s40;
+}
+
+#s41 {
+	grid-area: s41;
 }
 
 #p2score {
@@ -109,11 +288,15 @@ body {
 	font-weight: 400;
 	font-style: normal;
 }
-#p2score h3 {
+#score2 {
 	margin-top: 15px;
+	font-family: anca, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 40px;
 }
 
-#message {
+#messages {
 	grid-area: message;
 	display: flex;
 	justify-content: center;
@@ -152,4 +335,5 @@ body {
 #restart:hover {
 	color: #F2CB05;
 	text-shadow: 2px 2px 0 black;
+	cursor: pointer;
 }
