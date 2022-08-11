@@ -6,7 +6,8 @@ let score1 = document.getElementById("score1");
 let score2 = document.getElementById("score2");
 let s1 = parseInt(score1.innerHTML);
 let s2 = parseInt(score2.innerHTML);
-//let board = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null];
+
+
 let col = [
 	[],
 	[],
@@ -24,14 +25,19 @@ let board = [
 	[null, null, null, null, null, null, null],
 	[null, null, null, null, null, null, null]
 ]
-let move;
+let move = null;
 
 let button = document.getElementById("restart");
 button.addEventListener("click", restartGame);
 
 document.querySelectorAll(".dot").forEach(function(dot){
+
 	colId = parseInt(dot.id);
+	
+
 	dot.addEventListener("click", makeAmove);
+
+	
 	if (colId < 6){
 		col[0].push(dot);
 	} else if (colId < 12) {
@@ -137,6 +143,7 @@ function hCheck(num){
 			if(((board[a][0] === 'p1') && (board[a][1] === 'p1') && (board[a][2] === 'p1') && (board[a][3] === 'p1')) || ((board[a][1] === 'p1') && (board[a][2] === 'p1') && (board[a][3] === 'p1') && (board[a][4] === 'p1')) || ((board[a][2] === 'p1') && (board[a][3] === 'p1') && (board[a][4] === 'p1') && (board[a][5] === 'p1')) || ((board[a][3] === 'p1') && (board[a][4] === 'p1') && (board[a][5] === 'p1') && (board[a][6] === 'p1'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -146,6 +153,7 @@ function hCheck(num){
 			if(((board[a][0] === 'p2') && (board[a][1] === 'p2') && (board[a][2] === 'p2') && (board[a][3] === 'p2')) || ((board[a][1] === 'p2') && (board[a][2] === 'p2') && (board[a][3] === 'p2') && (board[a][4] === 'p2')) || ((board[a][2] === 'p2') && (board[a][3] === 'p2') && (board[a][4] === 'p2') && (board[a][5] === 'p2')) || ((board[a][3] === 'p2') && (board[a][4] === 'p2') && (board[a][5] === 'p2') && (board[a][6] === 'p2'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -159,6 +167,7 @@ function vCheck(num){
 			if(((board[0][a] === 'p1') && (board[1][a] === 'p1') && (board[2][a] === 'p1') && (board[3][a] === 'p1')) || ((board[1][a] === 'p1') && (board[2][a] === 'p1') && (board[3][a] === 'p1') && (board[4][a] === 'p1')) || ((board[2][a] === 'p1') && (board[3][a] === 'p1') && (board[4][a] === 'p1') && (board[5][a] === 'p1')) || ((board[3][a] === 'p1') && (board[4][a] === 'p1') && (board[5][a] === 'p1') && (board[6][a] === 'p1'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -168,6 +177,7 @@ function vCheck(num){
 			if(((board[0][a] === 'p2') && (board[1][a] === 'p2') && (board[2][a] === 'p2') && (board[3][a] === 'p2')) || ((board[1][a] === 'p2') && (board[2][a] === 'p2') && (board[3][a] === 'p2') && (board[4][a] === 'p2')) || ((board[2][a] === 'p2') && (board[3][a] === 'p2') && (board[4][a] === 'p2') && (board[5][a] === 'p2')) || ((board[3][a] === 'p2') && (board[4][a] === 'p2') && (board[5][a] === 'p2') && (board[6][a] === 'p2'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -181,6 +191,7 @@ function dCheck(num){
 			if(((board[0][a] === 'p1') && (board[1][a+1] === 'p1') && (board[2][a+2] === 'p1') && (board[3][a+3] === 'p1')) || ((board[1][a] === 'p1') && (board[2][a+1] === 'p1') && (board[3][a+2] === 'p1') && (board[4][a+3] === 'p1')) || ((board[2][a] === 'p1') && (board[3][a+1] === 'p1') && (board[4][a+2] === 'p1') && (board[5][a+3] === 'p1'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -189,6 +200,7 @@ function dCheck(num){
 			if(((board[0][a] === 'p1') && (board[1][a-1] === 'p1') && (board[2][a-2] === 'p1') && (board[3][a-3] === 'p1')) || ((board[1][a] === 'p1') && (board[2][a-1] === 'p1') && (board[3][a-2] === 'p1') && (board[4][a-3] === 'p1')) || ((board[2][a] === 'p1') && (board[3][a-1] === 'p1') && (board[4][a-2] === 'p1') && (board[5][a-3] === 'p1'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -198,6 +210,7 @@ function dCheck(num){
 			if(((board[0][a] === 'p2') && (board[1][a+1] === 'p2') && (board[2][a+2] === 'p2') && (board[3][a+3] === 'p2')) || ((board[1][a] === 'p2') && (board[2][a+1] === 'p2') && (board[3][a+2] === 'p2') && (board[4][a+3] === 'p2')) || ((board[2][a] === 'p2') && (board[3][a+1] === 'p2') && (board[4][a+2] === 'p2') && (board[5][a+3] === 'p2'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
@@ -206,12 +219,14 @@ function dCheck(num){
 			if(((board[0][a] === 'p2') && (board[1][a-1] === 'p2') && (board[2][a-2] === 'p2') && (board[3][a-3] === 'p2')) || ((board[1][a] === 'p2') && (board[2][a-1] === 'p2') && (board[3][a-2] === 'p2') && (board[4][a-3] === 'p2')) || ((board[2][a] === 'p2') && (board[3][a-1] === 'p2') && (board[4][a-2] === 'p2') && (board[5][a-3] === 'p2'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
+
 				});
 				return true;
 			} 
 		}
 	}
 }
+
 
 function tCheck(){
 	let sum = 0;
@@ -229,6 +244,9 @@ function tCheck(){
 		return true;
 	}
 }
+
+
+
 
 function updateBoard(num1, num2) {
 	if (num2 < 6) {
@@ -292,5 +310,55 @@ function updateBoard(num1, num2) {
 
 
 function restartGame() {
-	window.location.reload(true);
-};
+	turn = 1;
+	move = null;
+	message.style.color = "#D92B04";
+	message.innerHTML = "Player 1's turn";
+	
+	col = [
+	[],
+	[],
+	[],
+	[],
+	[],
+	[],
+	[]
+	];
+	
+	board = [
+	[null, null, null, null, null, null, null],
+	[null, null, null, null, null, null, null],
+	[null, null, null, null, null, null, null],
+	[null, null, null, null, null, null, null],
+	[null, null, null, null, null, null, null],
+	[null, null, null, null, null, null, null]
+	]
+	
+	document.querySelectorAll(".dot").forEach(function(dot){
+		dot.style.background = "white";
+		colId = parseInt(dot.id);
+		
+		
+
+			dot.addEventListener("click", makeAmove);
+
+		
+		
+		if (colId < 6){
+			col[0].push(dot);
+		} else if (colId < 12) {
+			col[1].push(dot);	   
+		} else if (colId < 18) {
+			col[2].push(dot);
+		} else if (colId < 24) {
+			col[3].push(dot);
+		} else if (colId < 30) {
+			col[4].push(dot);
+		} else if (colId < 36) {
+			col[5].push(dot);
+		} else if (colId < 42) {
+			col[6].push(dot);
+		}
+											  
+	});
+}
