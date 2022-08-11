@@ -104,6 +104,9 @@ function checkWinner(num)  {
 			message.innerHTML = "Player 1 is the winner";
 			score1.innerHTML = `${s1}`;
 			return;
+		} else if (tCheck()) {
+			message.innerHTML = "Looks like we have a tie!";
+			return;
 		} else {
 			turn++;
 			message.style.color = "#F2CB05";
@@ -111,10 +114,13 @@ function checkWinner(num)  {
 			return;
 		}
 	} else {
-		if (dCheck(num)) {
+		if ((dCheck(num)) || (hCheck(num)) || (vCheck(num)) ) {
 			s2++;
 			message.innerHTML = "Player 2 is the winner";
 			score2.innerHTML = `${s2}`;
+			return;
+		} else if (tCheck()) {
+			message.innerHTML = "Looks like we have a tie!";
 			return;
 		} else {
 			turn--;
@@ -204,6 +210,23 @@ function dCheck(num){
 				return true;
 			} 
 		}
+	}
+}
+
+function tCheck(){
+	let sum = 0;
+	for (let a = 0; a < 6; a++){
+		for (let j = 0; j < 7; j++){
+			if(board[a][j] === null){
+				sum++;
+			}
+		}
+	}
+	console.log(`Sum is ${sum}`);
+	if (sum > 0){
+		return false;
+	} else {
+		return true;
 	}
 }
 
