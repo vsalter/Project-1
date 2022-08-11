@@ -99,7 +99,7 @@ function makeAmove(evt) {
 function checkWinner(num)  {
 	
 	if (num === 1) {
-		if ((vCheck(num)) || (hCheck(num))) {
+		if ((dCheck(num)) || (hCheck(num)) || (vCheck(num)) ) {
 			s1++;
 			message.innerHTML = "Player 1 is the winner";
 			score1.innerHTML = `${s1}`;
@@ -111,7 +111,7 @@ function checkWinner(num)  {
 			return;
 		}
 	} else {
-		if (vCheck(num)) {
+		if (dCheck(num)) {
 			s2++;
 			message.innerHTML = "Player 2 is the winner";
 			score2.innerHTML = `${s2}`;
@@ -149,7 +149,7 @@ function hCheck(num){
 
 function vCheck(num){
 	if(num === 1){
-		for (let a = 0; a < 6; a++){
+		for (let a = 0; a < 4; a++){
 			if(((board[0][a] === 'p1') && (board[1][a] === 'p1') && (board[2][a] === 'p1') && (board[3][a] === 'p1')) || ((board[1][a] === 'p1') && (board[2][a] === 'p1') && (board[3][a] === 'p1') && (board[4][a] === 'p1')) || ((board[2][a] === 'p1') && (board[3][a] === 'p1') && (board[4][a] === 'p1') && (board[5][a] === 'p1')) || ((board[3][a] === 'p1') && (board[4][a] === 'p1') && (board[5][a] === 'p1') && (board[6][a] === 'p1'))){
 				document.querySelectorAll(".dot").forEach(function(dot){
 					dot.removeEventListener("click", makeAmove);
@@ -170,7 +170,41 @@ function vCheck(num){
 }
 
 function dCheck(num){
-	
+	if(num === 1){
+		for (let a = 0; a < 4; a++){
+			if(((board[0][a] === 'p1') && (board[1][a+1] === 'p1') && (board[2][a+2] === 'p1') && (board[3][a+3] === 'p1')) || ((board[1][a] === 'p1') && (board[2][a+1] === 'p1') && (board[3][a+2] === 'p1') && (board[4][a+3] === 'p1')) || ((board[2][a] === 'p1') && (board[3][a+1] === 'p1') && (board[4][a+2] === 'p1') && (board[5][a+3] === 'p1'))){
+				document.querySelectorAll(".dot").forEach(function(dot){
+					dot.removeEventListener("click", makeAmove);
+				});
+				return true;
+			} 
+		}
+		for (let a = 6; a > 2; a--){
+			if(((board[0][a] === 'p1') && (board[1][a-1] === 'p1') && (board[2][a-2] === 'p1') && (board[3][a-3] === 'p1')) || ((board[1][a] === 'p1') && (board[2][a-1] === 'p1') && (board[3][a-2] === 'p1') && (board[4][a-3] === 'p1')) || ((board[2][a] === 'p1') && (board[3][a-1] === 'p1') && (board[4][a-2] === 'p1') && (board[5][a-3] === 'p1'))){
+				document.querySelectorAll(".dot").forEach(function(dot){
+					dot.removeEventListener("click", makeAmove);
+				});
+				return true;
+			} 
+		}
+	} else {
+		for (let a = 0; a < 6; a++){
+			if(((board[0][a] === 'p2') && (board[1][a+1] === 'p2') && (board[2][a+2] === 'p2') && (board[3][a+3] === 'p2')) || ((board[1][a] === 'p2') && (board[2][a+1] === 'p2') && (board[3][a+2] === 'p2') && (board[4][a+3] === 'p2')) || ((board[2][a] === 'p2') && (board[3][a+1] === 'p2') && (board[4][a+2] === 'p2') && (board[5][a+3] === 'p2'))){
+				document.querySelectorAll(".dot").forEach(function(dot){
+					dot.removeEventListener("click", makeAmove);
+				});
+				return true;
+			} 
+		}
+		for (let a = 6; a > 2; a--){
+			if(((board[0][a] === 'p2') && (board[1][a-1] === 'p2') && (board[2][a-2] === 'p2') && (board[3][a-3] === 'p2')) || ((board[1][a] === 'p2') && (board[2][a-1] === 'p2') && (board[3][a-2] === 'p2') && (board[4][a-3] === 'p2')) || ((board[2][a] === 'p2') && (board[3][a-1] === 'p2') && (board[4][a-2] === 'p2') && (board[5][a-3] === 'p2'))){
+				document.querySelectorAll(".dot").forEach(function(dot){
+					dot.removeEventListener("click", makeAmove);
+				});
+				return true;
+			} 
+		}
+	}
 }
 
 function updateBoard(num1, num2) {
