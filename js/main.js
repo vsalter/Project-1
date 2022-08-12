@@ -237,7 +237,6 @@ function tCheck(){
 			}
 		}
 	}
-	console.log(`Sum is ${sum}`);
 	if (sum > 0){
 		return false;
 	} else {
@@ -253,7 +252,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][0] === null){
 				board[a][0] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
@@ -261,7 +259,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][1] === null){
 				board[a][1] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
@@ -269,7 +266,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][2] === null){
 				board[a][2] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
@@ -277,7 +273,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][3] === null){
 				board[a][3] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
@@ -285,7 +280,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][4] === null){
 				board[a][4] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
@@ -293,7 +287,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][5] === null){
 				board[a][5] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
@@ -301,7 +294,6 @@ function updateBoard(num1, num2) {
 		for (let a = 0; a < 6; a++){
 			if (board[a][6] === null){
 				board[a][6] = `p${num1}`;
-				console.log(board[a]);
 				return;
 			}
 		}
