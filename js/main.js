@@ -1,3 +1,4 @@
+//Create and initialize variables that represent player turn, id of circles, id of the columns array, message element, player 1 score, player 2 score
 let turn = 1;
 let id;
 let colId;
@@ -7,7 +8,7 @@ let score2 = document.getElementById("score2");
 let s1 = parseInt(score1.innerHTML);
 let s2 = parseInt(score2.innerHTML);
 
-
+//Create an array that represents the columns of the board and one to keep track of the players moves
 let col = [
 	[],
 	[],
@@ -25,11 +26,14 @@ let board = [
 	[null, null, null, null, null, null, null],
 	[null, null, null, null, null, null, null]
 ]
+//Create a variable that will store elements of the col array when popped from the stack
 let move = null;
 
+//Create a varable that represents the restart button and then add an eventListener that calls the restartGame function when clicked 
 let button = document.getElementById("restart");
 button.addEventListener("click", restartGame);
 
+//selecting each span element or circle and storing its id in a varable, adding a event listener that calls the makeAmove function, then storing each element in the col array 
 document.querySelectorAll(".dot").forEach(function(dot){
 
 	colId = parseInt(dot.id);
@@ -55,7 +59,7 @@ document.querySelectorAll(".dot").forEach(function(dot){
 	}
 });
 
-
+//function to make a move on the board
 function makeAmove(evt) {
 	
 	id = parseInt(evt.target.id);
@@ -102,6 +106,7 @@ function makeAmove(evt) {
 
 }
 
+//function to check for winner
 function checkWinner(num)  {
 	
 	if (num === 1) {
@@ -137,6 +142,7 @@ function checkWinner(num)  {
 	}
 }
 
+//function to check for a horizontal line
 function hCheck(num){
 	if(num === 1){
 		for (let a = 0; a < 6; a++){
@@ -161,6 +167,7 @@ function hCheck(num){
 	}
 }
 
+//function to check for a horizontal line
 function vCheck(num){
 	if(num === 1){
 		for (let a = 0; a < 4; a++){
@@ -185,6 +192,7 @@ function vCheck(num){
 	}
 }
 
+//function to check for a diagonal line
 function dCheck(num){
 	if(num === 1){
 		for (let a = 0; a < 4; a++){
@@ -227,7 +235,7 @@ function dCheck(num){
 	}
 }
 
-
+//function to check for a tie game
 function tCheck(){
 	let sum = 0;
 	for (let a = 0; a < 6; a++){
@@ -246,7 +254,7 @@ function tCheck(){
 
 
 
-
+//funciton to update the board
 function updateBoard(num1, num2) {
 	if (num2 < 6) {
 		for (let a = 0; a < 6; a++){
@@ -300,7 +308,7 @@ function updateBoard(num1, num2) {
 	}
 }
 
-
+//function to restart a game
 function restartGame() {
 	turn = 1;
 	move = null;
