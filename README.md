@@ -49,7 +49,10 @@ Connect Four is a classic game in which two players alternate turns dropping cir
 - **Pseudocode:** Link to pseudocode is [here](https://docs.google.com/document/d/1gpZOTKWqRWZA9izZgI-v74ohHJ-872QfOxfI2-Hnmhs/edit?usp=sharing)
 
 ## Hurdles
- - jfkda
+ - The first hurdle I faced was updating the board. For the logic to make moves on the board I started by implementing the logic used from my Tic-Tac-Toe game. This would not work for Connect Four because it updated the individual circles instead of the column. I contemplated on multiple solutions and settled on implementing a data structure we learned in class, a stack. I created an array of arrays called **col**, to represent the 7 columns on the board. I used a conditional statement to add elements to the array. This allowed me to update the columns from bottom to top.
+ 
+ 
+ - The other hurdle I faced was how I would restart the game. For my Tic-Tac-Toe game the approach I used would refresh the entire page when the restart button was pressed. For my Connect Four game I wanted to keep a score of games won so the previous approach would not work this time. So, within my function to restart the game I chose to reset variables and change the background of the circles to restart a game. This allowed me to keep the score displayed and only resetting the board. 
  
 ## Future Features
  - Prompt at start of game to determine game mode
